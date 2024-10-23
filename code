@@ -55,4 +55,18 @@ int main()
         cout << "Максимальное число: " << max << "\n";
         cout << "Минимальное число: " << min;
     }
+    if (choise == 2)
+    {
+        int num;
+        cout << "Введите ваше число: " << "\n";
+        cin >> num;
+        if (to_string(num).length == 3)
+        {
+            cout << "jdjfdj";
+        }
+        else
+        {
+            cout << "Число должно быть трехзначным";
+        }
+    }
 }
