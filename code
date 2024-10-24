@@ -3,6 +3,10 @@
 #include <string>
 
 using namespace std;
+int first;
+int second;
+int third;
+int min1;
 
 int main()
 {
@@ -60,9 +64,48 @@ int main()
         int num;
         cout << "Введите ваше число: " << "\n";
         cin >> num;
-        if (to_string(num).length == 3)
+        if (to_string(num).length() == 3)
         {
-            cout << "jdjfdj";
+            first = num / 100;
+            second = (num / 10) % 10;
+            third = num % 10;
+            if (first <= second && first <= third) 
+            {
+                min1 = first * 100;
+                if (second <= third) 
+                {
+                    min1 += second * 10 + third;
+                }
+                else 
+                {
+                    min1 += third * 10 + second;
+                }
+            }
+            else if (second <= first && second <= third) 
+            {
+                min1 = second * 100;
+                if (first <= third) 
+                {
+                    min1 += first * 10 + third;
+                }
+                else 
+                {
+                    min1 += third * 10 + first;
+                }
+            }
+            else 
+            {
+                min1 = third * 100;
+                if (first <= second) 
+                {
+                    min1 += first * 10 + second;
+                }
+                else 
+                {
+                    min1 += second * 10 + first;
+                }
+            }
+            cout << "Минимально возможное число: " << min1;
         }
         else
         {
